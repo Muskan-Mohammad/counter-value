@@ -1,17 +1,18 @@
-import { DECREMENT_ACTION, INCREMENT_ACTION } from "./counter.actions";
+import { DECREMENT_ACTION , INCREMENT_ACTION } from "./counter.action";
 
-export function counterReducers(currentState = 500, action) {
+export function counterReducer(currentState = 100 , action){
     const payload = action.payload;
-    const type = action.type; 
-    console.log(":: counterReducers ::", currentState, action)
+    const type = action.type;
 
-    if(type === INCREMENT_ACTION.type) {
+    if (type === INCREMENT_ACTION.type){
         return currentState + 10;
-    }
 
-    if(type === DECREMENT_ACTION.type) {
-        return currentState - 20;
-    }
+}
 
-    return currentState;
+if(type === DECREMENT_ACTION.type){
+    return currentState - 10;
+}
+
+return currentState;
+
 }
